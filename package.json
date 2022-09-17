@@ -1,0 +1,16 @@
+{
+  "name": "bloodpoints-spender",
+  "version": "1.0.0",
+  "description": "Automatically spends bloodpoints in Dead By Daylight",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "eflorit",
+  "license": "ISC",
+  "dependencies": {
+    "desktop-screenshot": "^0.1.1",
+    "jimp": "^0.16.2",
+    "robotjs": "^0.6.0"
+  }
+}
