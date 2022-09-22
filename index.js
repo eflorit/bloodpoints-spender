@@ -100,28 +100,31 @@ async function run() {
   }
 
   try {
+    resetMousePosition();
     [x, y] = await findClickableNode();
+    await clickNode(x, y);
 
     if (JSON.stringify(lastClickableNode) == JSON.stringify([x, y])) {
       throw new Error("Could not validate previously identified node. Out of bloodpoints?");
     }
 
     nbConsecutiveErrors = 0;
-    await clickNode(x, y);
-    resetMousePosition();
     lastClickableNode = [x, y];
 
   } catch(e) {
-    if (e.message == "Could not find clickable node") {
-      if (await isPrestigeReady()) {
-        console.debug("Prestige ready, leveling up")
-        await performPrestige();
-      }
-      else
-      {
+    console.error(e.message);
+
+    switch(e.message) {
+      case "Could not find clickable node":
+        if (await isPrestigeReady()) {
+          console.debug("Prestige ready, leveling up")
+          await performPrestige();
+        }
+
+      case "Could not validate previously identified node. Out of bloodpoints?":
         nbConsecutiveErrors+= 1;
         if (nbConsecutiveErrors > 5) {
-          console.error("Could not find clickable node. Tried several times.");
+          console.error(`${nbConsecutiveErrors} consecutive errors. Aborting`);
           await keypress();
           process.exit(1);
         }
@@ -130,11 +133,13 @@ async function run() {
         resetMousePosition();
         robot.mouseClick();
         await timeout(5000);
-      }
-    } else {
-      console.error(`${e.message} Aborting.`);
-      await keypress();
-      process.exit(1);
+      break;
+
+      default:
+        console.error("Aborting.");
+        await keypress();
+        process.exit(1);
+      break;
     }
   }
 

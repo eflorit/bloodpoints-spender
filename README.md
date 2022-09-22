@@ -20,7 +20,7 @@ You must be on PC, with an in-game resolution of `1920x1080`. Tested with graphi
 
 1. Install [Node.js](https://nodejs.org/en/download/), make sure during install to check box to also get [Chocolatey](https://user-images.githubusercontent.com/3109072/68096791-82350c00-fe89-11e9-8cfa-b4619ce96162.jpg) as well.
 2. Follow requirements to build [RobotJS](http://robotjs.io/docs/building) (you may or may not need to [tweak PowerShell](https://caiomsouza.medium.com/fix-for-powershell-script-not-digitally-signed-69f0ed518715) at some point).
-3. Install dependancies: `npm install`
+3. Install dependencies: `npm install`
 4. Run: `node index.js`
 
 # FAQ
