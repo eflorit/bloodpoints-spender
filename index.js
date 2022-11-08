@@ -60,7 +60,7 @@ function findClickableNode() {
 }
 
 async function clickNode(x, y) {
-  robot.moveMouse(x + 15, y + 15);
+  robot.moveMouse(x + 10, y + 20);
   robot.mouseToggle("down");
   await timeout(1200);
   robot.mouseToggle("up");
