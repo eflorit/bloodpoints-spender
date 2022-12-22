@@ -62,7 +62,7 @@ function findClickableNode() {
 async function clickNode(x, y) {
   robot.moveMouse(x + 10, y + 20);
   robot.mouseToggle("down");
-  await timeout(1200);
+  await timeout(500);
   robot.mouseToggle("up");
 }
 
@@ -132,7 +132,7 @@ async function run() {
         // Maybe opened mystery box or just finished bloodweb. Trying to reset UI state + wait some more.
         resetMousePosition();
         robot.mouseClick();
-        await timeout(5000);
+        await timeout(4000);
       break;
 
       default:
