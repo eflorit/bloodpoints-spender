@@ -1,3 +1,10 @@
+:no_entry::no_entry::warning:  **THIS PROJECT IS DISCONTINUED** :warning::no_entry::no_entry:
+
+Dbd patch 6.7.0 introduced automatic purchase in bloodwebs. The improvement broke this project, which will not be fixed since it should no longer serve a purpose. See you in the fog!
+
+---
+
+
 This is a simple afternoon project for automatically spending bloodpoints on Dead By Daylight bloodwebs, thus leveling up characters. Fire it up, and go walk outside for an hour. It'll make mom happy.
 
 You must be on PC, with an in-game resolution of `1920x1080`. Tested with graphics on `Low`.
